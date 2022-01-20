@@ -108,7 +108,6 @@ export const scrollToIndexSystem = u.system(
             })
 
             unsubscribeNextListRefresh = u.handleNext(smoothScrollTargetReached, () => {
-              retry(listChanged)
             })
           } else {
             unsubscribeNextListRefresh = u.handleNext(u.pipe(listRefresh, watchChangesFor(50)), retry)
